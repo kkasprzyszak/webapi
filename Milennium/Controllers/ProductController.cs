@@ -33,10 +33,10 @@ namespace Milennium.Controllers
 
 
         [HttpGet]
-        public async Task<List<Product>> GetAll()
+        public async Task<IEnumerable<ProductViewModel>> GetAll()
         {
             await Task.Delay(Random.Next(1000, 2000));
-            return _repository.Get();
+            return _repository.Get().Select(x => _mapper.Map<ProductViewModel>(x));
         }
         
         [HttpGet("{id}")]

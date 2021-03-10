@@ -1,0 +1,18 @@
+﻿using AutoMapper;
+using Milennium.Model;
+using Milennium.ViewModel;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace Milennium.Profiles
+{
+    public class ProductProfile: Profile
+    {
+        public ProductProfile()
+        {
+            CreateMap<Product, ProductViewModel>().ReverseMap();
+        }
+    }
+}
